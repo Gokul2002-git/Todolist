@@ -1,0 +1,26 @@
+<%- include("header") -%>
+        <h1>it is <%=listtitle%></h1>
+    
+        <%lis.forEach(function(name){%>
+            <form method="post" action="/delete">
+                <li> <input type="checkbox" name="checkbox" value="<%= name._id %>" onchange="this.form.submit()"><%=name.items%></li>
+                <input type="hidden" name="listname" value="<%=listtitle%>"> 
+            </form>
+       
+        <%});%>
+        <!-- <%for(var i=0;i<lis.length;i++){%>
+            <li><%=lis[i].items%></li>
+        <%}%> -->
+        <!-- <li><%=lis%></li> -->
+    </ul>
+    <hr>
+    <form action="/" method="post">
+        <label>enter the list Item</label>
+
+        <input type="text" name="list" >
+        <br>
+        <button type="submit" name="button" value="<%=listtitle%>">Add</button>
+    </form>
+    <%- include("footer") -%>
+
+    
