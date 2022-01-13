@@ -8,7 +8,7 @@
  app.set("view engine","ejs");
  
 
- mongoose.connect("mongodb://localhost:27017/todolistdb");
+ mongoose.connect("mongodb+srv://19csr044:Gokul2002@cluster0.dowfo.mongodb.net/todolistdb");
  const itemschema={
     items:String
  };
@@ -172,7 +172,7 @@ res.redirect("/");
 
  });
 
- app.listen(3000,function()
+ app.listen(process.env.PORT||3000,function()
  {
      console.log("server started");
 
